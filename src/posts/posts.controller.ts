@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { PostsService } from './posts.service';
 
 @Controller('posts')
@@ -6,7 +6,12 @@ export class PostsController {
   constructor(private postsService: PostsService) {}
 
   @Get()
-  getAllPosts() {
+  getPosts() {
     return this.postsService.getPosts();
+  }
+
+  @Get(':id')
+  getPost(@Param('id') id: number) {
+    return this.postsService.getPost(id);
   }
 }
