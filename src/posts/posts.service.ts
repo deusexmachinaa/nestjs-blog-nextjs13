@@ -22,6 +22,6 @@ export class PostsService {
   }
 
   getPost(id: number) {
-    return this.posts.find((post) => post.id == id);
+    return this.posts.find((post: Posts) => post.id == id);
   }
 }
