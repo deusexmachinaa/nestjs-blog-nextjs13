@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Posts } from './posts.entity';
+import { v4 } from 'uuid';
 
 @Injectable()
 export class PostsService {
@@ -23,5 +24,15 @@ export class PostsService {
 
   getPost(id: number) {
     return this.posts.find((post: Posts) => post.id == id);
+  }
+
+  createPost(title: string, content: string) {
+    const newPost = {
+      id: v4(),
+      title,
+      content,
+    };
+    this.posts.push(newPost);
+    return this.posts;
   }
 }
