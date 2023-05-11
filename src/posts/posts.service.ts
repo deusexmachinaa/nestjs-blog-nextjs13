@@ -27,7 +27,7 @@ export class PostsService {
   }
 
   createPost(title: string, content: string) {
-    const newPost = {
+    const newPost: Posts = {
       id: v4(),
       title,
       content,

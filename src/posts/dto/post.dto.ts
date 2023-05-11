@@ -1,8 +1,8 @@
-export class createTask {
+export class createPost {
   title: string;
   content: string;
 }
 
-export class deleteTask {
+export class deletePost {
   id: number;
 }
