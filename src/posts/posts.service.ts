@@ -7,26 +7,26 @@ export class PostsService {
   // simulate a database
   private posts: Posts[] = [
     {
-      id: 1,
+      id: '1',
       title: 'First post',
       content: 'This is the first post',
     },
     {
-      id: 2,
+      id: '2',
       title: 'Second post',
       content: 'This is the second post',
     },
   ];
 
-  getPosts() {
+  getPosts(): Posts[] {
     return this.posts;
   }
 
-  getPost(id: number) {
+  getPost(id: string): Posts {
     return this.posts.find((post: Posts) => post.id == id);
   }
 
-  createPost(title: string, content: string) {
+  createPost(title: string, content: string): Posts[] {
     const newPost: Posts = {
       id: v4(),
       title,
@@ -36,7 +36,13 @@ export class PostsService {
     return this.posts;
   }
 
-  deletePost(id: number) {
-    return this.posts.filter((post: Posts) => post.id != id);
+  deletePost(id: string) {
+    this.posts.filter((post: Posts) => post.id != id);
+    return this.posts;
+  }
+
+  updatePost(id: string, updatedPost): Posts {
+    const index = this.posts.findIndex((post: Posts) => post.id == id);
+    return (this.posts[index] = updatedPost);
   }
 }
