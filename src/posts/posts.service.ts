@@ -1,4 +1,4 @@
-import { Injectable, Post } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Posts } from './posts.entity';
 import { v4 } from 'uuid';
 
@@ -37,6 +37,6 @@ export class PostsService {
   }
 
   deletePost(id: number) {
-    return this.posts.filter((post) => post.id != id);
+    return this.posts.filter((post: Posts) => post.id != id);
   }
 }
