@@ -43,6 +43,7 @@ export class PostsService {
 
   updatePost(id: string, updatedPost): Posts {
     const index = this.posts.findIndex((post: Posts) => post.id == id);
-    return (this.posts[index] = updatedPost);
+    const newPost = Object.assign(this.posts[index], updatedPost);
+    return (this.posts[index] = newPost);
   }
 }
