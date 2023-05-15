@@ -5,6 +5,7 @@ const postApi = axios.create({
   baseURL: 'http://localhost:3000/posts',
 });
 
-export const getAllPosts = (): Promise<AxiosResponse<Posts[]>> => {
+export const getPosts = (): Promise<AxiosResponse<Posts[]>> => {
   return postApi.get('/');
 };
+
