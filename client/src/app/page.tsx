@@ -1,19 +1,9 @@
-"use client"
+import React from 'react'
 
-import { getPosts } from '../api/post.api'
-import { useEffect, useState } from 'react';
-
-function index() {
-  useEffect(() => {
-    async function getAllPosts() {
-      const res = await getPosts();
-      console.log(res);
-    }
-
-    getAllPosts();
-  }, []);
-
-  return <div>index</div>;
+function page() {
+  return (
+    <div>Home page</div>
+  )
 }
 
-export default index;
+export default page
