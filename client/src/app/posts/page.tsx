@@ -1,6 +1,6 @@
 'use client';
 
-import PostList from '../../components/PostsList';
+import PostList from '../../components/posts/PostsList';
 
 function page() {
   return (
