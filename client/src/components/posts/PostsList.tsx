@@ -1,6 +1,7 @@
 import { getPosts } from '../../api/post.api';
 import { useEffect, useState } from 'react';
 import { Posts } from '../../../types/posts.index';
+import PostCard from './PostCard';
 
 function PostsList() {
   const [posts, setposts] = useState<Posts[]>([]);
@@ -28,12 +29,7 @@ function PostsList() {
       {loading ? (
         <p>Loading posts...</p>
       ) : (
-        posts.map((post: Posts) => (
-          <div key={post.id}>
-            <h1>{post.title}</h1>
-            <p>{post.content}</p>
-          </div>
-        ))
+        posts.map((post: Posts) => <PostCard key={post.id} post={post} />)
       )}
     </div>
   );
