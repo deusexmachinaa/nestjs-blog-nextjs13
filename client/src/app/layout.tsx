@@ -1,5 +1,7 @@
-import NavBar from '@/components/app/NavBar';
+import NavBar from '../components/app/NavBar';
+import NavPosts from '../components/app/NavPosts';
 import { Inter } from 'next/font/google';
+import { StylesheetLinks, ScriptLinks } from '../Utils/ExternalLinks';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,9 +17,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <StylesheetLinks />
+      </head>
       <body className={inter.className}>
+        <NavPosts />
         <NavBar />
         {children}
+        <ScriptLinks />
       </body>
     </html>
   );
