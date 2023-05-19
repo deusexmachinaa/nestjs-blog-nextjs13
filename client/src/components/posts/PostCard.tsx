@@ -1,7 +1,7 @@
 import { Posts } from '../../../types/posts.index';
 
 function PostCard({ post }: { post: Posts }) {
-  const { title, content } = post;
+  const { title, content }: { title: string; content: string } = post;
   return (
     <div>
       <h1>{title}</h1>
