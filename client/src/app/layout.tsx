@@ -1,4 +1,3 @@
-import NavBar from '../components/app/NavBar';
 import NavPosts from '../components/app/NavPosts';
 import { Inter } from 'next/font/google';
 import { StylesheetLinks, ScriptLinks } from '../Utils/ExternalLinks';
@@ -22,7 +21,6 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <NavPosts />
-        <NavBar />
         {children}
         <ScriptLinks />
       </body>
