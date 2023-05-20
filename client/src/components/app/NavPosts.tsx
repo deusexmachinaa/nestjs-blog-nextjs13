@@ -1,6 +1,7 @@
 import React from 'react';
 
 function NavPosts() {
+    
   return (
     <div>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
