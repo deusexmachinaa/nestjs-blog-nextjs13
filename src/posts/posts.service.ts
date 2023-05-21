@@ -16,6 +16,16 @@ export class PostsService {
       title: 'Second post',
       content: 'This is the second post',
     },
+    {
+      id: '3',
+      title: 'Third post',
+      content: 'This is the third post',
+    },
+    {
+      id: '4',
+      title: 'Fourth post',
+      content: 'This is the fourth post',
+    },
   ];
 
   getPosts(): Posts[] {
