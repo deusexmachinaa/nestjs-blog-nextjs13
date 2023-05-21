@@ -10,21 +10,25 @@ export class PostsService {
       id: '1',
       title: 'First post',
       content: 'This is the first post',
+      img: 'https://picsum.photos/200/300',
     },
     {
       id: '2',
       title: 'Second post',
       content: 'This is the second post',
+      img: 'https://picsum.photos/200/300',
     },
     {
       id: '3',
       title: 'Third post',
       content: 'This is the third post',
+      img: 'https://picsum.photos/200/300',
     },
     {
       id: '4',
       title: 'Fourth post',
       content: 'This is the fourth post',
+      img: 'https://picsum.photos/200/300',
     },
   ];
 
