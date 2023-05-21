@@ -24,13 +24,17 @@ function PostsList() {
   }, []);
 
   return (
-    <div>
-      <h1>Posts</h1>
-      {loading ? (
-        <p>Loading posts...</p>
-      ) : (
-        posts.map((post: Posts) => <PostCard key={post.id} post={post} />)
-      )}
+    <div className="items-center justify-between mx-auto self-center max-w-screen-xl">
+      <h1 className="font-bold text-6xl self-center max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
+        Posts
+      </h1>
+      <div className="grid grid-cols-3 pt-4">
+        {loading ? (
+          <p>Loading posts...</p>
+        ) : (
+          posts.map((post: Posts) => <PostCard key={post.id} post={post} />)
+        )}
+      </div>
     </div>
   );
 }
