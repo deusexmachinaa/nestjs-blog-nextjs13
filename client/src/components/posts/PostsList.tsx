@@ -1,16 +1,19 @@
-import { getPosts } from '../../api/post.api';
+import { getPost, getPosts } from '../../api/post.api';
 import { useEffect, useState } from 'react';
 import { Posts } from '../../../types/posts.index';
 import PostCard from './PostCard';
 
 function PostsList() {
   const [posts, setposts] = useState<Posts[]>([]);
+  //한개만 출력할때
+  // const [posts, setposts] = useState<Posts>();
   const [loading, setloading] = useState(true);
 
   useEffect(() => {
     const getAllPosts = async () => {
       try {
         const res = await getPosts();
+        // const res = await getPost();
         const { data } = res;
         setposts(data);
       } catch (err) {
@@ -33,6 +36,8 @@ function PostsList() {
           <p>Loading posts...</p>
         ) : (
           posts.map((post: Posts) => <PostCard key={post.id} post={post} />)
+          // 한개만 출력하기
+          // <PostCard key={posts?.id} post={posts!} />
         )}
       </div>
     </div>
